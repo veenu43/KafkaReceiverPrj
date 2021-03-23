@@ -30,7 +30,7 @@ public class SimpleReceiverTest {
 		System.out.println("waiting for messages");
 		while(true) {
 			ConsumerRecords<String, String>  records=consumer.poll(Duration.ofSeconds(20));
-			records.forEach(record->System.out.println("key: "+record.key()+"\tvalue: "+record.value()+" from partition: "+record.partition()));
+			records.forEach(record->System.out.println("key: "+record.key()+"\tvalue: "+record.value()+" from partition: "+record.partition()+ " offset: "+record.offset()));
 		}
 		
 	}
